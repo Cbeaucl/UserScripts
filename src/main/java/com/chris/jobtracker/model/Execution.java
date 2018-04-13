@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Data
 public class Execution {
-    enum ExectuionStatus {
+    public enum ExecutionStatus {
         RUNNING,
         FAILED,
         COMPLETE,
@@ -16,10 +16,13 @@ public class Execution {
     @ManyToOne
     @JoinColumn
     private UserScript userScript;
-    private ExectuionStatus status;
+    private ExecutionStatus status;
     @Id
     @GeneratedValue
     private Long id;
 
-
+    public Execution(UserScript userScript, ExecutionStatus status) {
+        this.userScript = userScript;
+        this.status = status;
+    }
 }

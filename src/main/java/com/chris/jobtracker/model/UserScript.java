@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 @Data
 public class UserScript {
-    enum ScriptType {
+    public enum ScriptType {
         PYTHON,
         JAVA,
         GROOVY,
