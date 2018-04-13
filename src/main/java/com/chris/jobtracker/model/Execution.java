@@ -21,6 +21,7 @@ public class Execution {
     @GeneratedValue
     private Long id;
 
+    public Execution(){};
     public Execution(UserScript userScript, ExecutionStatus status) {
         this.userScript = userScript;
         this.status = status;

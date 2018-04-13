@@ -18,8 +18,7 @@ public class DatabaseLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         UserScript script = new UserScript("Bob", "TheBestScriptEver","See Title", UserScript.ScriptType.GROOVY,new ArrayList<Execution>());
-        List<Execution> executions = new ArrayList<Execution>();
-        Execution test = new Execution(script, Execution.ExecutionStatus.QUEUED);
+        List<Execution> executions = new ArrayList<>();
         executions.add(new Execution(script, Execution.ExecutionStatus.QUEUED));
         script.setExecutions(executions);
         repo.saveAndFlush(script);
